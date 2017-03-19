@@ -62,7 +62,8 @@ public class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
             // New data is back from the server.  Hooray!
         }
         Intent myIntent = new Intent(context, JokeActivity.class)
-                .putExtra(Intent.EXTRA_TEXT, mJoke);
+                .putExtra(Intent.EXTRA_TEXT, mJoke)
+                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK); //Add this flag for async task testing
         context.startActivity(myIntent);
     }
 }
